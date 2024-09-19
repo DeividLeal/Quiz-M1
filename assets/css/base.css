@@ -1,0 +1,15 @@
+/* Estilos globais (reset, variáveis, tipografia) */
+@import url('./variables.css');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+        font-family: var(--base-font-family);
+}
+
+html{
+    scroll-behavior: smooth;
+    display: flex;
+}
+

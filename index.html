@@ -3,9 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/img/icon-queen.webp" type="image/x-icon">
+    <meta name="description" content="Jogo sobre princesas onde o usuriario devera descobrir qual Princesa pelo audio">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="./assets/css/variables.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/components.css">
+    <link rel="stylesheet" href="./assets/css/landing-page.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap" as="style">
     <title>Quiz Squad 5</title>
 </head>
 <body>
-    
+    <!-- Modal de início do jogo -->
+    <div id="start-modal" class="modal">
+        <main class="modal-content">
+                <h2>Bem-vindo ao Quiz Descubra a Princesa!</h2>
+            <div class="modal-text">
+                <br>Você será desafiado a adivinhar as princesas apenas pelo áudio.</br>Está preparado?</p>
+                <label for="username">Digite seu nome para começar:</label>
+                <input type="text" id="username" placeholder="Seu nome aqui" required>
+                <button id="start-btn" aria-label="Iniciar o jogo" onclick="startGame()">Começar</button>
+            </div>
+            <div class="modal-image">
+                <img src="./assets/img/Princesas Disney.png" alt="Imagems das princesas">
+            </div>
+        </main>
+    </div>
+    <header>
+        <section>
+            <h1>ADIVINHE O PERSONAGEM</h1>
+            <div class="content-time">
+                <p id="timer">⏰: 0s</p>
+            </div>
+        </section>
+    </header>
+
+
+    <main>
+        <!-- Main content -->
+    </main>
+
+    <footer>
+        <div class="content-score">
+            <p id="score">Pontos: 0</p>
+        </div>
+    </footer>
+    <script src="./assets/js/script.js"></script>    
 </body>
 </html>
