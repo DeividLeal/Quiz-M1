@@ -13,7 +13,6 @@ const questions = [
     },
 ];
 
-
 // Função para iniciar o jogo e fechar a modal
 function startGame() {
     const usernameInput = document.getElementById('username').value;

@@ -30,24 +30,49 @@
         </main>
     </div>
     <header>
-        <section>
-            <h1>ADIVINHE O PERSONAGEM</h1>
-            <div class="content-time">
+        <section id="cabecalho-principal">
+            <h1 id="cabecalho-titulo">ADIVINHE O PERSONAGEM</h1>
+            <section class="content-time">
+                <p id="score">Pontos: 0</p>
                 <p id="timer">⏰: 0s</p>
-            </div>
+            </section>
         </section>
     </header>
 
-
     <main>
         <!-- Main content -->
+            <form id="container-formulario" method="set" target="_self">
+                <fieldset id="container-fieldset">
+                    <legend id="pergunta-principal">Quem está acompanhando o principe nessa cena?</legend>
+                    <figure id="container-imagem">
+                        <img id="imagem" width="800" height="300" src="https://miro.medium.com/v2/resize:fit:1400/0*-IyPWNijUqjPwsP4.png"/>
+                    </figure>
+
+                    <section id="perguntas">
+                        <section id="container-perguntas">
+                            <input type="radio"> <label id="texto-perguntas">Anastacia</label>
+                        </section>
+
+                        <section id="container-perguntas">
+                            <input type="radio"> <label id="texto-perguntas">Branca de Neve</label>
+                        </section>
+
+                        <section id="container-perguntas">
+                            <input type="radio"> <label id="texto-perguntas">Bela</label>
+                        </section>
+
+                        <section id="container-perguntas">
+                            <input type="radio"> <label id="texto-perguntas">Cindelera</label>
+                        </section>
+                </fieldset>
+
+                <section id="container-butao">
+                    <button id="enviar-pergunta">Enviar</button>
+                </section>
+            </form>
     </main>
 
-    <footer>
-        <div class="content-score">
-            <p id="score">Pontos: 0</p>
-        </div>
-    </footer>
+    <footer></footer>
     <script src="./assets/js/script.js"></script>    
 </body>
 </html>
