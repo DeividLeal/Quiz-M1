@@ -7,10 +7,37 @@ let currentQuestionIndex = 0;
 // Array de perguntas e respostas
 const questions = [
     {
-        audioPerson: 'img/meme1-shadow.png', // Audio Personagem
-        options: ['X', 'X', 'X', 'X'],
-        correct: X
+        textPerson: "Qual princesa foi inspirada em uma figura histórica real, uma nativa americana?", // Audio Personagem
+        options: ['Pocahontas', 'Cinderela', 'Moana', 'Mulan'],
+        correct: 0
     },
+    
+    {
+        textPerson: 'Qual princesa é filha do chefe de uma tribo e sonha em navegar pelo oceano?', // Audio Personagem
+        options: ['Tiana', 'Cinderela', 'Moana', 'Jasmine'],
+        correct: 2
+    },
+    {
+        textPerson: 'Qual princesa foi criada por sua madrasta e é famosa por seu sapatinho de cristal?', // Audio Personagem
+        options: ['Jasmine', ' Mulan', 'Cinderela', 'Tiana'],
+        correct: 2
+    },  
+    {
+        textPerson: 'Qual princesa se disfarça de guerreiro para salvar seu país da invasão dos Hunos?', // Audio Personagem
+        options: ['Moana', 'Mulan', 'Jasmine', 'Tiana'],
+        correct: 1
+    },
+    
+    {
+        textPerson: 'Qual princesa vive em Agrabah e tem um tapete mágico?', // Audio Personagem
+        options: ['Cinderela', 'Pocahontas', 'Jasmine', ' Mulan'],
+        correct: 2
+    },
+    {
+        textPerson: 'Qual princesa sonha em abrir seu próprio restaurante em Nova Orleans?', // Audio Personagem
+        options: ['Tiana ', 'Pocahontas', 'Moana', ' Jasmine'],
+        correct: 0
+    }, 
 ];
 
 
