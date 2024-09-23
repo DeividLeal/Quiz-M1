@@ -1,6 +1,37 @@
 /* Estilos de componentes reutilizáveis (botões, cards) */
 @import url('./variables.css');
 
+.options-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px auto;
+    max-width: 90%;
+}
+
+.options-list li {
+   width: 20%;
+   list-style: none;
+}
+
+.options-list img {
+    border-radius: 10px;
+}
+
+.options-list-button {
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 10px;
+    /* cursor: pointer; */
+}
+
+.options-list-text {
+    font-weight: 600;
+    font-size: 20px;
+}
+
 .modal {
     position: fixed;
     width: 100%;

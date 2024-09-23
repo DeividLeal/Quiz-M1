@@ -13,8 +13,8 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap" as="style">
     <title>Descubra a Princesa</title>
 </head>
-<body>
-    <!-- Modal de início do jogo -->
+<body onload="startGame()">
+    <!-- Modal de início do jogo
      <div id="start-modal" class="modal">
         <main class="modal-content">
                 <h2>Bem-vindo ao Quiz Descubra a Princesa!</h2>
@@ -24,11 +24,48 @@
                 <input type="text" id="username" placeholder="Seu nome aqui" required>
                 <button id="start-btn" aria-label="Iniciar o jogo" onclick="startGame()">Começar</button>
             </div>
-            <div class="modal-image">
-                <img src="./assets/img/Princesas Disney.png" alt="Imagems das princesas">
-            </div>
         </main>
-    </div> 
+    </div>  -->
+
+    <!-- Container do quiz -->
+    <!-- <div id="quiz-container">
+        <h2 id="question">Qual princesa foi inspirada em uma figura histórica real, uma nativa americana?</h2>
+        <div id="options">
+            <ul class="options-list">
+                <li>
+                    <button class="options-list-button">
+                        <img src="./assets/img/Pocahontas-face.jpeg" alt="Imagem da princesa">
+                       <p class="options-list-text">Pocahontas</p>
+                    </button>
+                </li>
+                <li>
+                    <button class="options-list-button">
+                        <img src="./assets/img/Pocahontas-face.jpeg" alt="Imagem da princesa">
+                       <p class="options-list-text">Pocahontas</p>
+                    </button>
+                </li>
+                <li>
+                    <button class="options-list-button">
+                        <img src="./assets/img/Pocahontas-face.jpeg" alt="Imagem da princesa">
+                       <p class="options-list-text">Pocahontas</p>
+                    </button>
+                </li>
+                <li>
+                    <button class="options-list-button">
+                        <img src="./assets/img/Pocahontas-face.jpeg" alt="Imagem da princesa">
+                       <p class="options-list-text">Pocahontas</p>
+                    </button>
+                </li>
+            </ul>
+        </div> -->
+        <div id="quiz-container">
+           
+    <div id="options">
+        <h2 id="question"></h2>
+        <ul class="options-list" id="options-list"></ul>
+    </div>
+        <button onclick="nextQuestion()">Próxima Pergunta</button>
+    </div>
 
     <script src="./assets/js/script.js"></script>    
 </body>

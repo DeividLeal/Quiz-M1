@@ -13,10 +13,13 @@ html{
     display: flex;
 }
 
-#container {
-    background-image: url(../img/princesas-disney.jpeg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
 }
