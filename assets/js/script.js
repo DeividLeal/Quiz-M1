@@ -1,8 +1,6 @@
 let username = ''; // Variável para armazenar o nome do usuário
-let time = 0; // Variável para o cronômetro
-let timerInterval; // Intervalo do cronômetro
-let score = 0; // Variável para armazenar o contador de pontos
-let currentQuestionIndex = 0;
+let timer; // Variável para armazenar o temporizador
+let timeLeft = 20; // Tempo em segundos para cada pergunta
 
 // Array de perguntas e respostas
 const allQuestions = [
@@ -19,31 +17,65 @@ const allQuestions = [
     {
         question: 'Qual princesa é filha do chefe de uma tribo e sonha em navegar pelo oceano?',
         options: [
-            { text: 'Tina', image: 'assets/images/moana.jpg' },
-            { text: 'Cinderela', image: 'assets/images/ariel.jpg' },
-            { text: 'Moana', image: './img/Moana-face.jpg' },
-            { text: 'Jasmine', image: 'assets/images/aurora.jpg' }
+            { text: 'Tiana', image: './assets/img/Tiana-face.jpg' },
+            { text: 'Cinderela', image: './assets/img/Cinderela-face.png' },
+            { text: 'Moana', image: './assets/img/Moana-face.jpg' },
+            { text: 'Jasmine', image: './assets/img/Jasmine-face.webp' }
         ],
         correct: 2
     },
     {
         question: 'Qual princesa foi criada por sua madrasta e é famosa por seu sapatinho de cristal?',
         options: [
-            { text: 'Jasmine', image: 'assets/images/bela.jpg' },
-            { text: 'Mulan', image: 'assets/images/cinderela.jpg' },
-            { text: 'Cinderela', image: './img/Cinderela-face.jpg' },
-            { text: 'Tina', image: 'assets/images/aurora.jpg' }
+            { text: 'Jasmine', image: './assets/img/Jasmine-face.webp' },
+            { text: 'Mulan', image: './assets/img/Mulan-face.jpeg' },
+            { text: 'Cinderela', image: './assets/img/Cinderela-face.png' },
+            { text: 'Tiana', image: './assets/img/Tiana-face.jpg' }
         ],
         correct: 2
+    },
+    {
+        question: 'Qual princesa se disfarça de guerreiro para salvar seu país da invasão dos Hunos?',
+        options: [
+            { text: 'Moana', image: './assets/img/Moana-face.jpg' },
+            { text: 'Mulan', image: './assets/img/Mulan-face.jpeg' },
+            { text: 'Jasmine', image: './assets/img/Jasmine-face.webp' },
+            { text: 'Tiana', image: './assets/img/Tiana-face.jpg' }
+        ],
+        correct: 1
+    },
+    {
+        question: 'Qual princesa vive em Agrabah e tem um tapete mágico?',
+        options: [
+            { text: 'Cinderela', image: './assets/img/Cinderela-face.png' },
+            { text: 'Pocahontas', image: './assets/img//Pocahontas-face.jpeg' },
+            { text: 'Jasmine', image: './assets/img/Jasmine-face.webp' },
+            { text: 'Mulan', image: './assets/img/Mulan-face.jpeg' }
+        ],
+        correct: 2
+    },
+    {
+        question: 'Qual princesa sonha em abrir seu próprio restaurante em Nova Orleans?',
+        options: [
+            { text: 'Tiana', image: './assets/img/Tiana-face.jpg' },
+            { text: 'Pocahontas', image: './assets/img//Pocahontas-face.jpeg' },
+            { text: 'Moana', image: './assets/img/Moana-face.jpg' },
+            { text: 'Jasmine', image: './assets/img/Jasmine-face.webp' }
+        ],
+        correct: 0
     },
 
 ];
 
-  // Função para carregar uma pergunta e suas opções
-  function loadQuestion(index) {
+let currentQuestionIndex = 0; // Índice da pergunta atual
+let totalQuestions = allQuestions.length; // Quantidade total de perguntas
+let points = 0; // Variável para armazenar os pontos, começa em 1
+
+// Função para carregar uma pergunta e suas opções
+function loadQuestion(index) {
     const questionElement = document.getElementById('question');
     const optionsListElement = document.getElementById('options-list');
-    
+
     // Limpa a lista de opções
     optionsListElement.innerHTML = '';
 
@@ -52,12 +84,14 @@ const allQuestions = [
     questionElement.textContent = currentQuestion.question;
 
     // Adiciona as opções à lista
-    currentQuestion.options.forEach(option => {
+    currentQuestion.options.forEach((option, optionIndex) => {
         const li = document.createElement('li');
-        
         const button = document.createElement('button');
         button.classList.add('options-list-button');
         
+        // Adiciona o índice da opção ao botão
+        button.dataset.optionIndex = optionIndex;
+
         const img = document.createElement('img');
         img.src = option.image;
         img.alt = `Imagem da princesa ${option.text}`;
@@ -65,21 +99,98 @@ const allQuestions = [
         const p = document.createElement('p');
         p.classList.add('options-list-text');
         p.textContent = option.text;
-        
+
         button.appendChild(img);
         button.appendChild(p);
         li.appendChild(button);
         optionsListElement.appendChild(li);
     });
+    startTimer(); // Inicia o cronômetro
+    enableButtons();
+}
+
+// Função para habilitar os botões
+function enableButtons() {
+    const buttons = document.querySelectorAll('.options-list-button');
+    buttons.forEach(button => button.disabled = false); // Habilita todos os botões
+}
+
+// Função para iniciar o temporizador
+function startTimer() {
+    timeLeft = 20; // Reseta o tempo
+    const timerElement = document.getElementById('timer'); // Elemento onde o tempo será exibido
+    timerElement.textContent = `Tempo: ${timeLeft}s`; // Exibe o tempo inicial
+
+    // Limpa o temporizador anterior se houver
+    clearInterval(timer);
+
+    // Inicia o intervalo do temporizador
+    timer = setInterval(() => {
+        timeLeft--; // Diminui o tempo
+        timerElement.textContent = `Tempo: ${timeLeft}s`; // Atualiza o tempo na tela
+
+        if (timeLeft <= 0) {
+            clearInterval(timer); // Limpa o temporizador
+            alert('Tempo esgotado! O quiz será reiniciado.'); // Mensagem de tempo esgotado
+            restartQuiz(); // Reinicia o quiz
+        }
+    }, 1000);
+}
+
+
+// Função para lidar com a seleção do usuário
+document.getElementById('options-list').addEventListener('click', function(event) {
+    const clickedButton = event.target.closest('button');
+    
+    if (clickedButton) {
+        const selectedOptionIndex = parseInt(clickedButton.dataset.optionIndex); // Obtém o índice da opção clicada
+        const currentQuestion = allQuestions[currentQuestionIndex]; // Obtém a pergunta atual
+        const isCorrect = selectedOptionIndex === currentQuestion.correct; // Verifica se a opção clicada está correta
+
+        if (isCorrect) {
+            clickedButton.style.backgroundColor = 'green'; // Muda o botão para verde se correto
+            increasePoints(); // Aumenta a pontuação
+            setTimeout(nextQuestion, 1000); // Espera um segundo antes de carregar a próxima pergunta
+        } else {
+            clickedButton.style.backgroundColor = 'red'; // Muda o botão para vermelho se incorreto
+            setTimeout(() => {
+                alert('Errado! O quiz será reiniciado.');
+                resetPoints(); // Reseta a pontuação
+                restartQuiz(); // Reinicia o quiz
+            }, 500); // Espera meio segundo antes de mostrar o alerta e reiniciar o quiz
+        }
+    }
+});
+
+// Função para carregar a próxima pergunta
+function nextQuestion() {
+    currentQuestionIndex++; // Avança para a próxima pergunta
+    if (currentQuestionIndex < totalQuestions) {
+        loadQuestion(currentQuestionIndex); // Carrega a próxima pergunta
+    } else {
+        alert('Parabéns! Você completou o quiz.'); // Mensagem quando todas as perguntas foram respondidas
+        restartQuiz(); // Reinicia o quiz após o término
+    }
+}
+
+// Função para aumentar a pontuação
+function increasePoints() {
+    points++; // Aumenta a pontuação
+    document.querySelector('.points').textContent = points.toString().padStart(2, '0'); // Atualiza o display da pontuação
+}
+
+// Função para resetar a pontuação
+function resetPoints() {
+    points = 1; // Reseta a pontuação
+    document.querySelector('.points').textContent = points.toString().padStart(2, '0'); // Atualiza o display da pontuação
+}
+
+// Função para reiniciar o quiz
+function restartQuiz() {
+    currentQuestionIndex = 0; // Reseta o índice da pergunta
+    loadQuestion(currentQuestionIndex); // Carrega a primeira pergunta novamente
+    resetPoints(); // Reseta a pontuação no início do quiz
 }
 
 // Carrega a primeira pergunta ao iniciar a página
-loadQuestion(0);
-
-// Função para testar o clique de uma opção (pode ser adaptada conforme necessário)
-document.getElementById('options-list').addEventListener('click', function(event) {
-    if (event.target.closest('button')) {
-        const selectedOption = event.target.closest('button').querySelector('.options-list-text').textContent;
-        alert('Você escolheu: ' + selectedOption);
-    }
-});
+loadQuestion(currentQuestionIndex);

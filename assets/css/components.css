@@ -9,6 +9,31 @@
     max-width: 90%;
 }
 
+.question-title {
+    font-size: var(--base-font-size);
+    font-family:'Comic Sans MS', 'Arial Rounded MT Bold', sans-serif;
+    color: var(--subtitle-color);
+    font-weight: 600;
+    text-align: center;
+    margin: 20px 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.question-title:before {
+    content: '👑';
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+}
+
 .options-list li {
    width: 20%;
    list-style: none;
@@ -24,13 +49,57 @@
     color: var(--secondary-color);
     border: none;
     border-radius: 10px;
-    /* cursor: pointer; */
 }
 
 .options-list-text {
+    font-size: 1.9rem;
     font-weight: 600;
-    font-size: 20px;
+    font-family: 'New Walt Disney Font', sans-serif;
+    text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff; 
 }
+
+.circle {
+    width: 80px; 
+    height: 80px;
+    background-color: #FFD700; 
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute; 
+    bottom: 20px;
+    right: 20px;
+    border: 5px solid var(--border-color); 
+  }
+  
+  .points {
+    font-size: 55px; 
+    font-weight: bold;
+    color: var(--border-color);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  /* .container-time {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #FFD700;
+    color: var(--border-color);
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    font-size: var(--base-font-size);
+  } */
+  
+
+li.correct {
+    background-color: green;
+  }
+
+  li.incorrect {
+    background-color: red;
+  }
 
 .modal {
     position: fixed;

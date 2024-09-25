@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/components.css">
     <link rel="stylesheet" href="./assets/css/landing-page.css">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/new-walt-disney-font?styles=60542" rel="stylesheet">
     <title>Descubra a Princesa</title>
 </head>
 <body onload="startGame()">
@@ -58,13 +59,21 @@
                 </li>
             </ul>
         </div> -->
-        <div id="quiz-container">
-           
-    <div id="options">
-        <h2 id="question"></h2>
-        <ul class="options-list" id="options-list"></ul>
-    </div>
-        <button onclick="nextQuestion()">Próxima Pergunta</button>
+        <div id="quiz-container" class="content-main">
+            <h1>Adivinhe a Personagem</h1>
+            <!-- <div id="timer" class="container-time">Tempo: 20s</div> -->
+        <div id="options">
+            <h2 id="question" class="question-title"></h2>
+            <ul class="options-list" id="options-list"></ul>
+        </div>
+            <button class="options-buttom" onclick="nextQuestion()">Próxima Pergunta</button>
+            <div class="circle">
+                <p class="points">00</p>
+              </div>
+              <audio autoplay="autoplay" controls="controls">
+                <source src="./assets/audio/audi-frozen.mp3" type="audio/mp3" />
+                seu navegador não suporta HTML5
+                </audio> 
     </div>
 
     <script src="./assets/js/script.js"></script>    

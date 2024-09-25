@@ -1,10 +1,21 @@
 :root {
     /* Colors */
     --primary-color: #ffffff;
-    --secondary-color: #008BA3 ;
-    --bg-color:#a728a3;
-
+    --secondary-color: #054461;
+    --subtitle-color: #cdcdcd;
+    --color-text: #000000;
+    --border-color:#5c29e5;
+    --bg-color:#c316f4;
+    --bg-component-color: #f5fe01;
+    --title-color: #f5fe01;
+    --buttom-color: #f5fe01;
     /* Fonts */
+    --title-font-size: 5rem;
+    --base-font-size: 1.5rem;
+       /* Gradients */
+       --primary-radial-gradient:  linear-gradient(88.76deg, rgba(252, 230, 38, 1) -100%, rgba(243, 90, 155, 1) 100%);
+       --primary-linear-gradient: linear-gradient(90deg, var(--primary-color) 0%, rgb(56, 156, 255) 100%);
+       --off-linear-gradient: linear-gradient(90deg, var(--primary-color) 0%, rgb(146, 156, 166) 100%);
 
     /* Vertical Inner Padding */
 
@@ -15,6 +26,6 @@
     /* Font-Size */
 
     /* Font- Styles */
-    --base-font-family: 'Montserrat', sans-serif;
+    --base-font-family: 'Fredoka One, comic sans ms';
 
 }

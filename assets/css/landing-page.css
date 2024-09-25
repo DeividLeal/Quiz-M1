@@ -1,1 +1,30 @@
 @import url('./variables.css');
+
+.content-main h1 {
+    margin: 20px 0;
+    font-size: var(--title-font-size);
+    font-family: 'New Walt Disney Font', sans-serif;
+    text-align: center;
+    font-weight: 600;
+    color: var(--title-color);
+    text-shadow: 
+        -2px -2px 0 #785afd,  
+         2px -2px 0 #785afd,
+        -2px  2px 0 #785afd,
+         2px  2px 0 #785afd;
+}
+
+.options-buttom {
+    padding: 10px 20px;
+    background: var(--primary-linear-gradient);
+    color: var(--color-text);
+    font-family: 'New Walt Disney Font', sans-serif;
+    font-weight: 900;
+    font-size: 1.7rem;
+    border: none;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+}
