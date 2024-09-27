@@ -2,6 +2,7 @@
 @import url('./variables.css');
 
 .modal {
+    display: none ;
     position: fixed;
     width: 100%;
     height: 100%;
@@ -18,6 +19,7 @@
     flex-direction: column;
     align-items: center;
     background-color: #fff;
+    color: black;
     padding: 25px;
     border: 1px solid #888;
     max-width: 600px;

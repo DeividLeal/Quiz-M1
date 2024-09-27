@@ -55,3 +55,67 @@ function startGame() {
         loadQuestion(); // Carrega a primeira pergunta
     }
 }
+
+// Função para verificar a resposta
+/*function checkAnswer( answer, ) {
+    const question = questions[currentQuestionIndex];
+    const correctAnswer = question.correct;
+
+    if(answer === correctAnswer) {
+        alert('Muito bem, resposta correta!!');
+        score++;
+        currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        loadQuestion();
+      } else {
+        alert('Fim do jogo!');
+      }
+    } else {
+      alert('Que pena, resposta incorreta.');
+      currentQuestionIndex = 0;
+      loadQuestion();
+    }
+   
+}*/
+
+function checkAnswer(answer) {
+    const question = questions[currentQuestionIndex];
+    const correctAnswer = question.correct;
+
+    const responseElement = document.getElementById('response');
+
+    if(answer === correctAnswer) {
+        responseElement.innerHTML = 'Muito bem, resposta correta!!';
+        score++;
+        currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        loadQuestion();
+      } else {
+        responseElement.innerHTML = 'Fim do jogo!';
+      }
+    } else {
+      responseElement.innerHTML = 'Que pena, resposta incorreta.';
+      currentQuestionIndex = 0;
+      loadQuestion();
+    }
+}
+
+// Função para carregar a pergunta
+function loadQuestion() {
+    const question = questions[currentQuestionIndex];
+    const options = question.options;
+  
+    document.getElementById('question-text').innerHTML = question.textPerson;
+    document.getElementById('options').innerHTML = '';
+  
+    options.forEach((option, index) => {
+      const optionElement = document.createElement('div');
+      optionElement.innerHTML = option;
+      optionElement.onclick = () => {
+        checkAnswer(index);
+      };
+      document.getElementById('options').appendChild(optionElement);
+    });
+  }
+
+
