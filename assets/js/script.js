@@ -1,7 +1,3 @@
-let username = ''; // Variável para armazenar o nome do usuário
-let timer; // Variável para armazenar o temporizador
-let timeLeft = 20; // Tempo em segundos para cada pergunta
-
 // Array de perguntas e respostas
 const allQuestions = [
     {
@@ -10,7 +6,7 @@ const allQuestions = [
             { text: 'Pocahontas', image: './assets/img/Pocahontas-face.jpeg' },
             { text: 'Jasmine', image: './assets/img/Jasmine-face.webp' },
             { text: 'Mulan', image: './assets/img/Mulan-face.jpeg' },
-            { text: 'Aurora', image: './assets/img/Tiana-face.jpg' }
+            { text: 'Tiana', image: './assets/img/Tiana-face.jpg' }
         ],
         correct: 0
     },
@@ -64,12 +60,33 @@ const allQuestions = [
         ],
         correct: 0
     },
+    
 
 ];
 
+let username = ''; // Variável para armazenar o nome do usuário
 let currentQuestionIndex = 0; // Índice da pergunta atual
 let totalQuestions = allQuestions.length; // Quantidade total de perguntas
 let points = 0; // Variável para armazenar os pontos, começa em 1
+
+// Função para iniciar o jogo e fechar a modal
+function startGame() {
+    const usernameInput = document.getElementById('username').value;
+    if (usernameInput.trim() === '') {
+        alert('Por favor, insira seu nome para começar o jogo!');
+    } else {
+        username = usernameInput;
+        alert(`Bem-vindo, ${username}! Boa sorte no quiz!`);
+        document.getElementById('start-modal').style.display = 'none'; // Esconde a modal
+        document.getElementById('quiz-container').style.display = 'block'; // Exibe o quiz
+        
+        // Toca o áudio de introdução
+        const introAudio = document.getElementById('intro-audio');
+        introAudio.play();
+
+        loadQuestion(currentQuestionIndex);
+    }
+}
 
 // Função para carregar uma pergunta e suas opções
 function loadQuestion(index) {
@@ -81,7 +98,7 @@ function loadQuestion(index) {
 
     // Define a pergunta atual
     const currentQuestion = allQuestions[index];
-    questionElement.textContent = currentQuestion.question;
+    questionElement.textContent = currentQuestion && currentQuestion.question;
 
     // Adiciona as opções à lista
     currentQuestion.options.forEach((option, optionIndex) => {
@@ -105,38 +122,8 @@ function loadQuestion(index) {
         li.appendChild(button);
         optionsListElement.appendChild(li);
     });
-    startTimer(); // Inicia o cronômetro
-    enableButtons();
+   
 }
-
-// Função para habilitar os botões
-function enableButtons() {
-    const buttons = document.querySelectorAll('.options-list-button');
-    buttons.forEach(button => button.disabled = false); // Habilita todos os botões
-}
-
-// Função para iniciar o temporizador
-function startTimer() {
-    timeLeft = 20; // Reseta o tempo
-    const timerElement = document.getElementById('timer'); // Elemento onde o tempo será exibido
-    timerElement.textContent = `Tempo: ${timeLeft}s`; // Exibe o tempo inicial
-
-    // Limpa o temporizador anterior se houver
-    clearInterval(timer);
-
-    // Inicia o intervalo do temporizador
-    timer = setInterval(() => {
-        timeLeft--; // Diminui o tempo
-        timerElement.textContent = `Tempo: ${timeLeft}s`; // Atualiza o tempo na tela
-
-        if (timeLeft <= 0) {
-            clearInterval(timer); // Limpa o temporizador
-            alert('Tempo esgotado! O quiz será reiniciado.'); // Mensagem de tempo esgotado
-            restartQuiz(); // Reinicia o quiz
-        }
-    }, 1000);
-}
-
 
 // Função para lidar com a seleção do usuário
 document.getElementById('options-list').addEventListener('click', function(event) {
@@ -168,7 +155,7 @@ function nextQuestion() {
     if (currentQuestionIndex < totalQuestions) {
         loadQuestion(currentQuestionIndex); // Carrega a próxima pergunta
     } else {
-        alert('Parabéns! Você completou o quiz.'); // Mensagem quando todas as perguntas foram respondidas
+        alert(`Parabéns, ${username}! Você venceu o jogo com ${points} pontos!`); // Mensagem quando todas as perguntas foram respondidas
         restartQuiz(); // Reinicia o quiz após o término
     }
 }
@@ -181,7 +168,7 @@ function increasePoints() {
 
 // Função para resetar a pontuação
 function resetPoints() {
-    points = 1; // Reseta a pontuação
+    points = 0; // Reseta a pontuação
     document.querySelector('.points').textContent = points.toString().padStart(2, '0'); // Atualiza o display da pontuação
 }
 
@@ -191,6 +178,7 @@ function restartQuiz() {
     loadQuestion(currentQuestionIndex); // Carrega a primeira pergunta novamente
     resetPoints(); // Reseta a pontuação no início do quiz
 }
+
 
 // Carrega a primeira pergunta ao iniciar a página
 loadQuestion(currentQuestionIndex);

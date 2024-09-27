@@ -21,5 +21,10 @@ img {
 body {
     background-color: var(--bg-color);
     color: var(--primary-color);
-    cursor: url('/assets/img/icon-queen.webp'), auto; 
+    cursor: url(http://www.webcis.com.br/images/lupa-clientes.cur), default;
+}   
+
+audio {
+    appearance: none;
+    outline: none;
 }

@@ -4,78 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./assets/img/icon-queen.webp" type="image/x-icon">
-    <meta name="description" content="Jogo sobre princesas onde o usuriario devera descobrir qual Princesa pelo audio">
+    <meta name="description" content="Jogo sobre princesas onde o usuriario devera descobrir qual Princesa pela pergunta">
     <!-- CSS only -->
     <link rel="stylesheet" href="./assets/css/variables.css">
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/components.css">
     <link rel="stylesheet" href="./assets/css/landing-page.css">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet" as="style">
     <link href="https://fonts.cdnfonts.com/css/new-walt-disney-font?styles=60542" rel="stylesheet">
     <title>Descubra a Princesa</title>
 </head>
-<body onload="startGame()">
-    <!-- Modal de início do jogo
-     <div id="start-modal" class="modal">
-        <main class="modal-content">
-                <h2>Bem-vindo ao Quiz Descubra a Princesa!</h2>
-            <div class="modal-text">
-                <br>Você será desafiado a adivinhar as princesas apenas pelo áudio.</br>Está preparado?</p>
-                <label for="username">Digite seu nome para começar:</label>
-                <input type="text" id="username" placeholder="Seu nome aqui" required>
-                <button id="start-btn" aria-label="Iniciar o jogo" onclick="startGame()">Começar</button>
-            </div>
-        </main>
-    </div>  -->
-
-    <!-- Container do quiz -->
-    <!-- <div id="quiz-container">
-        <h2 id="question">Qual princesa foi inspirada em uma figura histórica real, uma nativa americana?</h2>
-        <div id="options">
-            <ul class="options-list">
-                <li>
-                    <button class="options-list-button">
-                        <img src="./assets/img/Pocahontas-face.jpeg" alt="Imagem da princesa">
-                       <p class="options-list-text">Pocahontas</p>
-                    </button>
-                </li>
-                <li>
-                    <button class="options-list-button">
-                        <img src="./assets/img/Pocahontas-face.jpeg" alt="Imagem da princesa">
-                       <p class="options-list-text">Pocahontas</p>
-                    </button>
-                </li>
-                <li>
-                    <button class="options-list-button">
-                        <img src="./assets/img/Pocahontas-face.jpeg" alt="Imagem da princesa">
-                       <p class="options-list-text">Pocahontas</p>
-                    </button>
-                </li>
-                <li>
-                    <button class="options-list-button">
-                        <img src="./assets/img/Pocahontas-face.jpeg" alt="Imagem da princesa">
-                       <p class="options-list-text">Pocahontas</p>
-                    </button>
-                </li>
-            </ul>
-        </div> -->
-        <div id="quiz-container" class="content-main">
+<body>
+    <!-- Modal de início do jogo -->
+    <div id="start-modal" class="modal">
+        <div class="modal-content">
+            <h2>Bem-vindo ao Quiz</h2> <h3 class="modal-span">Descubra a Princesa!</h3>
+            <p>Está preparado?</p>
+            <!-- <label for="username">Digite seu nome para começar:</label> -->
+            <input type="text" id="username" placeholder="Digite seu nome para começar:">     
+            <button id="start-btn" class="modal-button" onclick="startGame()">Começar</button>
+        </div>        
+    </div>
+    <section id="quiz-container" class="content-main">
+        <header>
             <h1>Adivinhe a Personagem</h1>
-            <!-- <div id="timer" class="container-time">Tempo: 20s</div> -->
-        <div id="options">
+        </header>
+        
+        <article id="options">
             <h2 id="question" class="question-title"></h2>
             <ul class="options-list" id="options-list"></ul>
-        </div>
-            <button class="options-buttom" onclick="nextQuestion()">Próxima Pergunta</button>
-            <div class="circle">
-                <p class="points">00</p>
-              </div>
-              <audio autoplay="autoplay" controls="controls">
+        </article>
+        
+        <button class="options-button" onclick="nextQuestion()">Próxima Pergunta</button>
+        
+        <aside class="circle">
+            <p class="points">00</p>
+        </aside> 
+                <section class="content-audio" id="audio-play">
+            <audio autoplay="autoplay" controls="controls"  id="intro-audio">
                 <source src="./assets/audio/audi-frozen.mp3" type="audio/mp3" />
-                seu navegador não suporta HTML5
-                </audio> 
-    </div>
-
-    <script src="./assets/js/script.js"></script>    
+                Seu navegador não suporta HTML5.
+            </audio>
+        </section>
+    </section>
+    <script src="./assets/js/script.js" defer></script>    
 </body>
 </html>

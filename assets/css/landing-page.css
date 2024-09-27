@@ -1,9 +1,13 @@
 @import url('./variables.css');
 
+.content-main {
+    display:none
+}
+
 .content-main h1 {
     margin: 20px 0;
     font-size: var(--title-font-size);
-    font-family: 'New Walt Disney Font', sans-serif;
+    font-family: var(--font-family-disney);
     text-align: center;
     font-weight: 600;
     color: var(--title-color);
@@ -14,17 +18,18 @@
          2px  2px 0 #785afd;
 }
 
-.options-buttom {
+.options-button {
     padding: 10px 20px;
-    background: var(--primary-linear-gradient);
+    background:rgb(71, 162, 253);
     color: var(--color-text);
-    font-family: 'New Walt Disney Font', sans-serif;
+    font-family:var(--font-family-disney);
     font-weight: 900;
     font-size: 1.7rem;
     border: none;
     border-radius: 10px;
     position: absolute;
-    bottom: 20%;
+    bottom: 12%;
     left: 50%;
     transform: translateX(-50%);
+    cursor: pointer;
 }
