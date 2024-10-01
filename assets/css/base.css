@@ -5,7 +5,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: var(--base-font-family);
 }
 
 html{
@@ -28,3 +27,5 @@ audio {
     appearance: none;
     outline: none;
 }
+
+

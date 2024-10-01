@@ -27,56 +27,27 @@
 }
 
 /* Audio Controls */
-
 audio::-webkit-media-controls {
-    background-color: #e2b0d2;
+    background-color: var(--bg-media-controls);
     border-radius: 10px;
 }
 
 audio::-webkit-media-controls-panel {
-    background-color: #e2b0d2;
+    background-color: var(--bg-media-controls);
 }
 
 audio::-webkit-media-controls-play-button {
-    background-color: #A7D3FF;
+    background-color: var(--bg-controls-play-button);
     border-radius: 50%;
 }
 
 audio::-webkit-media-controls-volume-slider {
-    background-color: rgb(56, 156, 255);
+    background-color: var(--bg-volume-slider);
 }
 
 audio::-webkit-media-controls-current-time-display,
 audio::-webkit-media-controls-time-remaining-display {
-    color: #000000;
-}
-
-/* Options List */
-.options-list {
-    display: flex;
-    justify-content: center;
-    gap: 35px;
-    margin: 20px auto;
-    max-width: 90%;
-}
-
-.options-list li {
-    width: 20%;
-    list-style: none;
-}
-
-.options-list img {
-    border-radius: 10px;
-}
-
-.options-list-button {
-    padding: 10px;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s;
+    color: var(--color-text);
 }
 
 .options-list-button:hover,
@@ -89,23 +60,6 @@ audio::-webkit-media-controls-time-remaining-display {
     font-weight: 600;
     font-family: var(--font-family-disney);
     text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
-}
-
-/* Question Title */
-.question-title {
-    font-size: var(--base-font-size);
-    font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', sans-serif;
-    color: var(--subtitle-color);
-    font-weight: 600;
-    text-align: center;
-    margin: 20px 0;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    padding: 20px;
-    position: relative;
-    display: inline-block;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .question-title:before {
@@ -121,7 +75,7 @@ audio::-webkit-media-controls-time-remaining-display {
 .circle {
     width: 80px;
     height: 80px;
-    background-color: #FFD700;
+    background-color: var(--bg-circle-color);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -141,12 +95,12 @@ audio::-webkit-media-controls-time-remaining-display {
 
 /* Modal */
 .modal {
-    display: none ;
+    display: none;
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Removido o erro de sintaxe: ponto e vírgula extra */
-    display: flex; 
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
@@ -154,39 +108,36 @@ audio::-webkit-media-controls-time-remaining-display {
 
 .modal-content {
     display: flex;
-    color: #000000;
+    color: var(--color-text);
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-color: #fff;
-    color: black;
+    background-color: var(--bg-modal-content-color);
     padding: 25px;
-    border: 1px solid #888;
+    border: 1px solid var(--border-color);
     width: 600px;
     border-radius: 10px;
     text-align: center;
-    position: relative;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
 
 .modal-content h2 {
-    margin: 0;
-    padding: 10px 0;
     z-index: 2;
+    font-family: var(--base-font-family);
 }
 
-.modal-content p{
+.modal-content p {
     font-size: 1.2rem;
     font-family: var(--base-font-family);
-    margin-bottom:20px ;
+    margin-bottom: 20px;
 }
 
 .modal-span {
     font-family: var(--font-family-disney);
     font-size: 2rem;
     color: var(--border-color);
-    margin: 20px 0;
+    margin: 15px 0;
 }
 
 .modal-image img {
@@ -205,7 +156,7 @@ audio::-webkit-media-controls-time-remaining-display {
     gap: 5px;
     align-items: center;
     z-index: 2;
-    color: #000000;
+    color: var(--color-text);
     font-family: var(--base-font-family);
     font-size: 1.5rem;
 }
@@ -224,128 +175,15 @@ audio::-webkit-media-controls-time-remaining-display {
 
 .modal-button {
     padding: 10px 30px;
-    background:rgb(71, 162, 253);
-    color: rgb(0, 0, 0);
+    background: var(--color-modal-button);
+    color: var(--color-text);
     font-weight: 600;
     border: solid 2px transparent;
     border-radius: 5px;
     cursor: pointer;
-    transition: border-color 0.3s; 
+    transition: border-color 0.3s;
 }
 
 #start-btn:hover, #start-btn:focus {
     border-color: var(--border-color);
-}
-
-
-/* Media Queries */
-@media (max-width: 600px) {
-    .modal-content {
-        padding: 20px;
-        margin: 20% auto;
-    }
-
-    .modal-content h2 {
-        font-size: 1.25rem;
-    }
-
-    .modal-image > img {
-        width: 70%;
-    }
-}
-
-#cabecalho-principal {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.content-time {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-}
-
-main {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-#container-formulario {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    background-image: linear-gradient(to bottom, #f59d92, #f1ffd5);
-    width: 70%;
-    height: 50%;
-    margin-bottom: 5rem;
-}
-
-#container-fieldset {
-    margin-top: 2rem;
-    border-width: 0;
-}
-
-#pergunta-principal {
-    text-align: center;
-    padding: 2rem;
-    margin-bottom: 3rem;
-    background-color: #c3c6c9;
-}
-
-#container-imagem {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#imagem {
-    border-radius: 1rem;
-    margin-bottom: 3rem;
-}
-
-#perguntas {
-    padding: 2rem;
-    border-radius: 4rem 0 4rem 0;
-    background-color: crimson;
-    display: flex;
-    flex-flow: column wrap;
-    gap: 2rem;
-}
-
-#container-perguntas {
-    display: flex;
-    flex-flow: row wrap;
-    gap: 3rem;
-}
-
-#texto-perguntas {
-    font-size: 2rem;
-}
-
-#container-butao {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content:flex-end;
-    width: 100dvh;
-}
-
-#enviar-pergunta {
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    padding: 1.50rem;
-    font-size: 2rem;
-    border-radius: 1rem;
-    background-color: #f1ffd5;
-}
-
-#enviar-pergunta:hover {
-    background-color: #f59d92;
 }

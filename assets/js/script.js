@@ -3,19 +3,19 @@ const allQuestions = [
     {
         question: "Qual princesa foi inspirada em uma figura histórica real, uma nativa americana?",
         options: [
-            { text: 'Pocahontas', image: './assets/img/Pocahontas-face.jpeg' },
+            { text: 'Pocahontas', image: './assets/img/Pocahontas-face.webp' },
             { text: 'Jasmine', image: './assets/img/Jasmine-face.webp' },
-            { text: 'Mulan', image: './assets/img/Mulan-face.jpeg' },
-            { text: 'Tiana', image: './assets/img/Tiana-face.jpg' }
+            { text: 'Mulan', image: './assets/img/Mulan-face.webp' },
+            { text: 'Tiana', image: './assets/img/Tiana-face.webp' }
         ],
         correct: 0
     },
     {
         question: 'Qual princesa é filha do chefe de uma tribo e sonha em navegar pelo oceano?',
         options: [
-            { text: 'Tiana', image: './assets/img/Tiana-face.jpg' },
-            { text: 'Cinderela', image: './assets/img/Cinderela-face.png' },
-            { text: 'Moana', image: './assets/img/Moana-face.jpg' },
+            { text: 'Tiana', image: './assets/img/Tiana-face.webp' },
+            { text: 'Cinderela', image: './assets/img/Cinderela-face.webp' },
+            { text: 'Moana', image: './assets/img/Moana-face.webp' },
             { text: 'Jasmine', image: './assets/img/Jasmine-face.webp' }
         ],
         correct: 2
@@ -24,38 +24,38 @@ const allQuestions = [
         question: 'Qual princesa foi criada por sua madrasta e é famosa por seu sapatinho de cristal?',
         options: [
             { text: 'Jasmine', image: './assets/img/Jasmine-face.webp' },
-            { text: 'Mulan', image: './assets/img/Mulan-face.jpeg' },
-            { text: 'Cinderela', image: './assets/img/Cinderela-face.png' },
-            { text: 'Tiana', image: './assets/img/Tiana-face.jpg' }
+            { text: 'Mulan', image: './assets/img/Mulan-face.webp' },
+            { text: 'Cinderela', image: './assets/img/Cinderela-face.webp' },
+            { text: 'Tiana', image: './assets/img/Tiana-face.webp' }
         ],
         correct: 2
     },
     {
         question: 'Qual princesa se disfarça de guerreiro para salvar seu país da invasão dos Hunos?',
         options: [
-            { text: 'Moana', image: './assets/img/Moana-face.jpg' },
-            { text: 'Mulan', image: './assets/img/Mulan-face.jpeg' },
+            { text: 'Moana', image: './assets/img/Moana-face.webp' },
+            { text: 'Mulan', image: './assets/img/Mulan-face.webp' },
             { text: 'Jasmine', image: './assets/img/Jasmine-face.webp' },
-            { text: 'Tiana', image: './assets/img/Tiana-face.jpg' }
+            { text: 'Tiana', image: './assets/img/Tiana-face.webp' }
         ],
         correct: 1
     },
     {
         question: 'Qual princesa vive em Agrabah e tem um tapete mágico?',
         options: [
-            { text: 'Cinderela', image: './assets/img/Cinderela-face.png' },
-            { text: 'Pocahontas', image: './assets/img//Pocahontas-face.jpeg' },
+            { text: 'Cinderela', image: './assets/img/Cinderela-face.webp' },
+            { text: 'Pocahontas', image: './assets/img//Pocahontas-face.webp' },
             { text: 'Jasmine', image: './assets/img/Jasmine-face.webp' },
-            { text: 'Mulan', image: './assets/img/Mulan-face.jpeg' }
+            { text: 'Mulan', image: './assets/img/Mulan-face.webp' }
         ],
         correct: 2
     },
     {
         question: 'Qual princesa sonha em abrir seu próprio restaurante em Nova Orleans?',
         options: [
-            { text: 'Tiana', image: './assets/img/Tiana-face.jpg' },
-            { text: 'Pocahontas', image: './assets/img//Pocahontas-face.jpeg' },
-            { text: 'Moana', image: './assets/img/Moana-face.jpg' },
+            { text: 'Tiana', image: './assets/img/Tiana-face.webp' },
+            { text: 'Pocahontas', image: './assets/img//Pocahontas-face.webp' },
+            { text: 'Moana', image: './assets/img/Moana-face.webp' },
             { text: 'Jasmine', image: './assets/img/Jasmine-face.webp' }
         ],
         correct: 0

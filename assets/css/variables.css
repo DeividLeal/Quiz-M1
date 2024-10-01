@@ -4,29 +4,43 @@
     --secondary-color: #054461;
     --subtitle-color: #fff4f4;
     --color-text: #000000;
-    --border-color:#5c29e5;
-    --bg-color:#c316f4;
+    --border-color: #5c29e5;
+    --bg-color-question: rgba(255, 255, 255, 0.2);
+    --bg-color: #c316f4;
     --bg-component-color: #f5fe01;
     --title-color: #f5fe01;
-    --buttom-color: #f5fe01;
+    --button-color: #f5fe01;
+    --bg-modal-color: rgba(0, 0, 0, 0.5);
+    --bg-modal-content-color: #ffffff;
+    --color-modal-button: rgb(71, 162, 253);
+    --bg-circle-color: #ffd700;
+    --bg-media-controls: #e2b0d2;
+    --bg-controls-play-button: #A7D3FF;
+    --bg-volume-slider: rgb(56, 156, 255);
+
     /* Fonts */
     --title-font-size: 5rem;
     --base-font-size: 1.5rem;
-    /* Gradients */
-     --primary-radial-gradient:  linear-gradient(88.76deg, rgba(252, 230, 38, 1) -100%, rgba(243, 90, 155, 1) 100%);
-    --primary-linear-gradient: linear-gradient(90deg, var(--primary-color) 0%, rgb(56, 156, 255) 100%);
-     --off-linear-gradient: linear-gradient(90deg, var(--primary-color) 0%, rgb(146, 156, 166) 100%);
-
-    /* Vertical Inner Padding */
-
-    /* Horizontal Inner Padding */
-
-    /* Border Radius */
-
-    /* Font-Size */
-
-    /* Font- Styles */
-    --base-font-family: 'Fredoka One, comic sans ms';
+    --base-font-family: 'Fredoka One', 'Comic Sans MS', sans-serif;
     --font-family-disney: 'New Walt Disney Font', sans-serif;
 
+    /* Gradients */
+    --primary-radial-gradient: linear-gradient(88.76deg, rgba(252, 230, 38, 1) -100%, rgba(243, 90, 155, 1) 100%);
+    --primary-linear-gradient: linear-gradient(90deg, var(--primary-color) 0%, rgb(56, 156, 255) 100%);
+    --off-linear-gradient: linear-gradient(90deg, var(--primary-color) 0%, rgb(146, 156, 166) 100%);
+
+    /* Vertical Inner Padding */
+    /* Add your variables here */
+
+    /* Horizontal Inner Padding */
+    /* Add your variables here */
+
+    /* Border Radius */
+    /* Add your variables here */
+
+    /* Font Sizes */
+    /* Add your variables here */
+
+    /* Font Styles */
+    /* Add your variables here */
 }
