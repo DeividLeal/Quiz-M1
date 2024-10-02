@@ -90,3 +90,51 @@
     white-space: nowrap; 
     border: 0;
 }
+
+/* Media Queries */
+
+/* Mobile */
+@media (max-width: 600px) {
+    .options-list {
+        flex-direction: column;
+        sgap: 20px;
+    }
+
+    .options-list li {
+        width: 100%;
+    }
+
+    .question-title {
+        font-size: 1.5rem;
+        padding: 15px;
+    }
+
+    .circle {
+        width: 60px;
+        height: 60px;
+        bottom: 70px;
+        right: 10px;
+        position: fixed;
+    }
+
+    .points {
+        font-size: 36px;
+    }
+
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .modal-content h2 {
+        font-size: 1.25rem;
+    }
+
+    .modal-image img {
+        width: 70%;
+    }
+
+    .options-button{
+        display: none;
+    }
+}
