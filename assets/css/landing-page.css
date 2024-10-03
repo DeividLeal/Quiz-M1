@@ -158,3 +158,66 @@
         pointer-events: none;
     }
 }
+
+/* Tablet */
+@media (min-width: 601px) and (max-width: 900px) {
+
+    .options-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .options-list li {
+        width: 80%;
+    }
+
+    .question-title {
+        font-size: 1.75rem;
+        padding: 18px;
+    }
+
+    .circle {
+        width: 70px;
+        height: 70px;
+        top: 10px;
+        right: 15px;
+        position: fixed;
+    }
+
+    .points {
+        font-size: 40px;
+    }
+
+    .modal-content {
+        width: 85%;
+        padding: 25px;
+    }
+
+    #username {
+        font-size: 1rem;
+    }
+
+    .modal-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .modal-image img {
+        width: 80%;
+    }
+
+    .options-button {
+        display: none;
+    }
+
+    .audio-container {
+        transition: opacity 0.5s;
+        opacity: 1;
+        z-index: 1000;
+    }
+
+    .audio-container.hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
