@@ -33,6 +33,6 @@ audio {
     font-style: normal;
     font-weight: 400;
     src:
-      url("/assets/fonts/New-Walt-Disney.woff") format("woff");
+      url("../fonts/New-Walt-Disney.woff") format("woff");
   }
 
