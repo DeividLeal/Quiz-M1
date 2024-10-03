@@ -1,7 +1,7 @@
 @import url('./variables.css');
 
 .content-main {
-    display:none
+    display:none;
 }
 
 .content-main h1 {
@@ -95,9 +95,14 @@
 
 /* Mobile */
 @media (max-width: 600px) {
+
+    .content-main h1 {
+        margin-top: 30px;
+    }
+    
     .options-list {
         flex-direction: column;
-        sgap: 20px;
+        gap: 20px;
     }
 
     .options-list li {
@@ -112,7 +117,7 @@
     .circle {
         width: 60px;
         height: 60px;
-        bottom: 70px;
+        top: 5px;
         right: 10px;
         position: fixed;
     }
@@ -126,6 +131,10 @@
         padding: 20px;
     }
 
+    #username{
+        font-size: 0.9rem;
+    }
+
     .modal-content h2 {
         font-size: 1.25rem;
     }
@@ -136,5 +145,16 @@
 
     .options-button{
         display: none;
+    }
+
+    .audio-container {
+        transition: opacity 0.5s;
+        opacity: 1; 
+        z-index: 1000; 
+    }
+    
+    .audio-container.hidden {
+        opacity: 0;
+        pointer-events: none;
     }
 }

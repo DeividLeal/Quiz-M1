@@ -1,24 +1,29 @@
-# 👑 Projeto Quiz M1 - SQUAD 5 👑
+👑 Projeto Quiz M1 - SQUAD 5 👑
 
-✨ Este é o projeto final de um **quiz** desenvolvido no Módulo 1 do PDA. Neste desafio, a tarefa é criar um jogo de quiz com perguntas e opções de resposta. A jogabilidade é simples: se o jogador responder corretamente a pergunta, eles continuarão avançando para a próxima etapa; no entanto, se eles responderem incorretamente, o jogo terminará e eles precisarão começar novamente. ✨
+# Quiz do Módulo 1 do PDA
 
-![GIF da Aplicação](link-para-seu-gif-aqui) <!-- Substitua "link-para-seu-gif-aqui" pelo link do seu GIF -->
+✨ Este é o projeto final de um quiz desenvolvido no Módulo 1 do PDA. O desafio consiste em criar um jogo de perguntas e respostas. A jogabilidade é simples: se o jogador responder corretamente, ele avança para a próxima etapa. No entanto, se errar, o jogo termina e é necessário começar novamente. ✨
 
 ## 🛠️ Como executar o quiz
 
-1. **Clone este repositório**:
+1. Clone este repositório:
+
    ```bash
    git clone https://seu-repositorio.git
-   Navegue até a pasta do projeto:
    ```
 
-bash
-Copiar código
-cd nome-da-pasta
-Abra o arquivo index.html em um navegador para iniciar o quiz! 🌟
+2. Navegue até a pasta do projeto:
 
-🌈 Tecnologias utilizadas
-HTML: Para estruturar o conteúdo do quiz.
-CSS: Para estilizar a aparência do jogo e torná-lo mais atraente.
-JavaScript: Para implementar a lógica do quiz e interatividade.
+   ```bash
+   cd nome-da-pasta
+   ```
+
+3. Abra o arquivo `index.html` em um navegador para iniciar o quiz! 🌟
+
+## 🌈 Tecnologias utilizadas
+
+- **HTML**: Para estruturar o conteúdo do quiz.
+- **CSS**: Para estilizar a aparência do jogo e torná-lo mais atraente.
+- **JavaScript**: Para implementar a lógica do quiz e a interatividade.
+
 🎉 Divirta-se jogando e boa sorte! 🍀

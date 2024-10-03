@@ -20,12 +20,19 @@ img {
 body {
     background-color: var(--bg-color);
     color: var(--primary-color);
-    cursor: url(http://www.webcis.com.br/images/lupa-clientes.cur), default;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="90" viewBox="0 0 40 40" width="42"><text y="30" font-size="30">👑</text></svg>'), auto;
 }   
 
 audio {
     appearance: none;
     outline: none;
 }
-
+  
+@font-face {
+    font-family: "new walt disney font";
+    font-style: normal;
+    font-weight: 400;
+    src:
+      url("/assets/fonts/New-Walt-Disney.woff") format("woff");
+  }
 

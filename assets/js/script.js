@@ -14,18 +14,18 @@ const allQuestions = [
         question: 'Qual princesa é filha do chefe de uma tribo e sonha em navegar pelo oceano?',
         options: [
             { text: 'Tiana', image: './assets/img/Tiana-face.webp' },
-            { text: 'Cinderela', image: './assets/img/Cinderela-face.webp' },
+            { text: 'Kida', image: './assets/img/Kida-face.webp' },
             { text: 'Moana', image: './assets/img/Moana-face.webp' },
             { text: 'Jasmine', image: './assets/img/Jasmine-face.webp' }
         ],
         correct: 2
     },
     {
-        question: 'Qual princesa foi criada por sua madrasta e é famosa por seu sapatinho de cristal?',
+        question: 'Qual princesa vive na cidade perdida de Atlantis e é uma guerreira atlante?',
         options: [
             { text: 'Jasmine', image: './assets/img/Jasmine-face.webp' },
             { text: 'Mulan', image: './assets/img/Mulan-face.webp' },
-            { text: 'Cinderela', image: './assets/img/Cinderela-face.webp' },
+            { text: 'Kida', image: './assets/img/Kida-face.webp' },
             { text: 'Tiana', image: './assets/img/Tiana-face.webp' }
         ],
         correct: 2
@@ -43,7 +43,7 @@ const allQuestions = [
     {
         question: 'Qual princesa vive em Agrabah e tem um tapete mágico?',
         options: [
-            { text: 'Cinderela', image: './assets/img/Cinderela-face.webp' },
+            { text: 'Kida', image: './assets/img/Kida-face.webp' },
             { text: 'Pocahontas', image: './assets/img//Pocahontas-face.webp' },
             { text: 'Jasmine', image: './assets/img/Jasmine-face.webp' },
             { text: 'Mulan', image: './assets/img/Mulan-face.webp' }
@@ -60,8 +60,6 @@ const allQuestions = [
         ],
         correct: 0
     },
-    
-
 ];
 
 let username = ''; // Variável para armazenar o nome do usuário
@@ -87,6 +85,23 @@ function startGame() {
         loadQuestion(currentQuestionIndex);
     }
 }
+
+const audioContainer = document.getElementById('audio-container');
+const introAudio = document.getElementById('intro-audio');
+
+let lastScrollTop = 0;
+
+window.addEventListener('scroll', function() {
+    const currentScrollTop = window.scrollY;
+
+    if (currentScrollTop > lastScrollTop) {
+        audioContainer.classList.add('hidden');
+    } else {
+        audioContainer.classList.remove('hidden');
+    }
+
+    lastScrollTop = currentScrollTop;
+});
 
 // Função para carregar uma pergunta e suas opções
 function loadQuestion(index) {
@@ -122,7 +137,6 @@ function loadQuestion(index) {
         li.appendChild(button);
         optionsListElement.appendChild(li);
     });
-   
 }
 
 // Função para lidar com a seleção do usuário
@@ -178,7 +192,6 @@ function restartQuiz() {
     loadQuestion(currentQuestionIndex); // Carrega a primeira pergunta novamente
     resetPoints(); // Reseta a pontuação no início do quiz
 }
-
 
 // Carrega a primeira pergunta ao iniciar a página
 loadQuestion(currentQuestionIndex);

@@ -5,26 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./assets/img/coroa.webp" type="image/x-icon">
     <meta name="description" content="Jogo sobre princesas onde o usuriario devera descobrir qual Princesa pela pergunta">
+    <meta name="theme-color" content="#c316f4">
+    
     <!-- CSS only -->
+    <link rel="stylesheet" href="./assets/css/animations.css">
     <link rel="stylesheet" href="./assets/css/variables.css">
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/components.css">
     <link rel="stylesheet" href="./assets/css/landing-page.css">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet" as="style">
-    <link href="https://fonts.cdnfonts.com/css/new-walt-disney-font?styles=60542" rel="stylesheet">
+    
     <title>Descubra a Princesa</title>
 </head>
 <body>
     <!-- Modal de início do jogo -->
     <div id="start-modal" class="modal">
         <div class="modal-content">
-            <h2>Bem-vindo ao Quiz</h2> <h3 class="modal-span">Descubra a Princesa!</h3>
+            <h2>Bem-vindo ao Quiz</h2>
+            <h3 class="modal-span">Descubra a Princesa!</h3>
             <p>Está preparado?</p>
             <label for="username" class="visually-label">Digite seu nome para começar:</label>
-            <input type="text" id="username" placeholder="Digite seu nome para começar:">     
+            <input type="text" id="username" placeholder="Digite seu nome para começar:">
             <button id="start-btn" class="modal-button" onclick="startGame()">Começar</button>
-        </div>        
+        </div>
     </div>
+    
     <section id="quiz-container" class="content-main">
         <header>
             <h1>Adivinhe a Personagem</h1>
@@ -39,14 +43,18 @@
         
         <aside class="circle">
             <p class="points">00</p>
-        </aside> 
-                <section class="content-audio" id="audio-play">
-            <audio autoplay="autoplay" controls="controls"  id="intro-audio">
-                <source src="./assets/audio/audi-frozen.mp3" type="audio/mp3" />
-                Seu navegador não suporta HTML5.
-            </audio>
+        </aside>
+        
+        <section class="content-audio" id="audio-play">
+            <div id="audio-container" class="audio-container">
+                <audio autoplay="autoplay" controls="controls" id="intro-audio">
+                    <source src="./assets/audio/audi-frozen.mp3" type="audio/mp3" />
+                    Seu navegador não suporta HTML5.
+                </audio>
+            </div>
         </section>
     </section>
-    <script src="./assets/js/script.js" defer></script>    
+    
+    <script src="./assets/js/script.js" defer></script>
 </body>
 </html>

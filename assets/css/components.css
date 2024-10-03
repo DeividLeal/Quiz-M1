@@ -1,5 +1,6 @@
 /* Estilos de componentes reutilizáveis (botões, cards) */
 @import url('./variables.css');
+@import url('./animations.css');
 
 /* Content Audio */
 .content-audio {
@@ -13,17 +14,6 @@
     display: inline-block;
     animation: moveUp 1.5s ease-in-out forwards;
     will-change: transform;
-}
-
-@keyframes moveUp {
-    from {
-        transform: translateY(80px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0px);
-        opacity: 1;
-    }
 }
 
 /* Audio Controls */
